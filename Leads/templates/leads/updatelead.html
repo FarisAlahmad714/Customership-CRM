@@ -13,10 +13,12 @@
 <body>
     <a href="/leads">Back to leads</a>
     <hr>
-    <h1>{{ lead.first_name}} {{ lead.last_name}} Profile </h1>
-    <p>Agent:{{lead.agent}}</p>
-    <hr>
-    <h3> <a href="/leads/{{ lead.pk }}/update">Edit Lead</a></h3>
-    <h3> <a href="/leads/{{ lead.pk }}/delete">Delete Lead</a></h3>
+    <h1>Update lead : {{lead.first_name}} {{lead.last_name}}</h1>
+    <form method="post" action=".">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Submit</button>
+    </form>
+    
 </body>
 </html>
